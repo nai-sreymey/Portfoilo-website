@@ -25,100 +25,66 @@ const Projects: React.FC = () => {
           </div>
           <div className="bg-gray-800 rounded-lg p-6 shadow-lg">
             <div className="flex justify-center mb-4">
-              <img src="/weater.png" alt="Weater" className="" />
+              <img src="/bike.png" alt="Weater" className="" />
             </div>
             <h3 className="text-xl font-semibold text-purple-400 mb-2">
-              Weater
+             Bicycle
             </h3>
             <p className="mb-4">
-              Weater is an advanced weather tracking app that provides real-time
-              weather data, forecasts, and alerts for your location.
-            </p>
+  This high-quality bicycle is perfect for daily commuting and weekend rides.
+  It features a lightweight frame, smooth gears, and comfortable seating.
+  Grab yours today and enjoy the ride!
+</p>
+
           </div>
           <div className="bg-gray-800 rounded-lg p-6 shadow-lg">
             <div className="flex justify-center mb-4">
-              <img src="/weater.png" alt="Weater" className="" />
+              <img src="/blog.png" alt="Weater" className="" />
             </div>
             <h3 className="text-xl font-semibold text-purple-400 mb-2">
-              Weater
+            Blog-web
             </h3>
             <p className="mb-4">
-              Weater is an advanced weather tracking app that provides real-time
-              weather data, forecasts, and alerts for your location.
-            </p>
+  Blog-web is an advanced blogging platform that provides tools for creating, managing, and sharing your blog content with ease.
+</p>
           </div>
           <div className="bg-gray-800 rounded-lg p-6 shadow-lg">
             <div className="flex justify-center mb-4">
-              <img src="/weater.png" alt="Weater" className="" />
+              <img src="/fairy.png" alt="Weater" className="" />
             </div>
             <h3 className="text-xl font-semibold text-purple-400 mb-2">
-              Weater
+             Fairy-tale
             </h3>
             <p className="mb-4">
-              Weater is an advanced weather tracking app that provides real-time
-              weather data, forecasts, and alerts for your location.
-            </p>
+  Fairy-tale is an enchanting platform that brings magical stories to life, filled with whimsical characters, adventures, and timeless lessons for readers of all ages.
+</p>
           </div>
           <div className="bg-gray-800 rounded-lg p-6 shadow-lg">
             <div className="flex justify-center mb-4">
-              <img src="/weater.png" alt="Weater" className="" />
+              <img src="/survey.png" alt="Weater" className="" />
             </div>
             <h3 className="text-xl font-semibold text-purple-400 mb-2">
-              Weater
+            Build Online Survey and Dashboard Display
             </h3>
             <p className="mb-4">
-              Weater is an advanced weather tracking app that provides real-time
-              weather data, forecasts, and alerts for your location.
-            </p>
+  Create custom online surveys to gather valuable insights from your users. 
+  Use the dashboard display to visualize responses and analyze data in real-time 
+  for better decision-making.
+</p>
           </div>
           <div className="bg-gray-800 rounded-lg p-6 shadow-lg">
             <div className="flex justify-center mb-4">
-              <img src="/weater.png" alt="Weater" className="" />
+              <img src="/sala.png" alt="Weater" className="" />
             </div>
             <h3 className="text-xl font-semibold text-purple-400 mb-2">
-              Weater
+            Certificate-generation
             </h3>
             <p className="mb-4">
-              Weater is an advanced weather tracking app that provides real-time
-              weather data, forecasts, and alerts for your location.
-            </p>
+  Easily generate professional certificates for your events, courses, or achievements. 
+  Customize templates and instantly deliver certificates to participants online.
+</p>
           </div>
-          <div className="bg-gray-800 rounded-lg p-6 shadow-lg">
-            <div className="flex justify-center mb-4">
-              <img src="/weater.png" alt="Weater" className="" />
-            </div>
-            <h3 className="text-xl font-semibold text-purple-400 mb-2">
-              Weater
-            </h3>
-            <p className="mb-4">
-              Weater is an advanced weather tracking app that provides real-time
-              weather data, forecasts, and alerts for your location.
-            </p>
-          </div>
-          <div className="bg-gray-800 rounded-lg p-6 shadow-lg">
-            <div className="flex justify-center mb-4">
-              <img src="/weater.png" alt="Weater" className="" />
-            </div>
-            <h3 className="text-xl font-semibold text-purple-400 mb-2">
-              Weater
-            </h3>
-            <p className="mb-4">
-              Weater is an advanced weather tracking app that provides real-time
-              weather data, forecasts, and alerts for your location.
-            </p>
-          </div>
-          <div className="bg-gray-800 rounded-lg p-6 shadow-lg">
-            <div className="flex justify-center mb-4">
-              <img src="/weater.png" alt="Weater" className="" />
-            </div>
-            <h3 className="text-xl font-semibold text-purple-400 mb-2">
-              Weater
-            </h3>
-            <p className="mb-4">
-              Weater is an advanced weather tracking app that provides real-time
-              weather data, forecasts, and alerts for your location.
-            </p>
-          </div>
+        
           
 
         
