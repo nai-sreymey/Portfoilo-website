@@ -76,14 +76,6 @@ const Hero: React.FC = () => {
               ))}
             </ul>
           </nav>
-
-          <Image
-            src="/buildings.png"
-            alt="Nai SreyMey"
-            width={64}
-            height={64}
-            className="rounded-full object-cover shadow-2xl transform transition-transform duration-500 hover:scale-110 hover:rotate-3"
-          />
         </div>
       </header>
 

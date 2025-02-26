@@ -20,21 +20,20 @@ const Contact: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-Let&apos;s Work Together
+            Let&apos;s Work Together
           </motion.h2>
 
           <p className="text-lg text-gray-300 mb-6">
-          "I&apos;m open to freelance projects and collaborations. If you need a developer, Let&apos;s Work Together
-          to make something great!
+            &quot;I&apos;m open to freelance projects and collaborations. If you need a developer, Let&apos;s Work Together to make something great!&quot;
           </p>
 
           <div>
             <h3 className="text-2xl font-semibold text-blue-500 mb-4">Contact Information</h3>
             <p className="text-gray-400 text-lg">📍 Location: Phnom Penh, Cambodia</p>
-            <p className="text-gray-400 text-lg">🏠 Address:Trea Village, Stueng Meanchey, Meanchey, Phnom Penh</p>
+            <p className="text-gray-400 text-lg">🏠 Address: Trea Village, Stueng Meanchey, Meanchey, Phnom Penh</p>
             <p className="text-gray-400 text-lg">📞 Phone: 0967211849</p>
             <p className="text-gray-400 text-lg mt-4">
-              I work on full-stack development, creating websites and apps. If you&apos;re looking for a developer,let&apos;s talk!
+              I work on full-stack development, creating websites and apps. If you&apos;re looking for a developer, let&apos;s talk!
             </p>
             <div className="mt-8">
               <p className="text-gray-400 text-sm">You can reach me through the form or follow me on social media!</p>
