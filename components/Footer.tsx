@@ -1,67 +1,44 @@
-"use client";
-import React, { useEffect, useState } from 'react';
-import { FaFacebook, FaInstagram, FaTelegram, FaEnvelope } from 'react-icons/fa';
-
-// Define the interface for the footer data
-interface FooterData {
-  name: string;
-  text1: string;
-  text2: string;
-  text3: string;
-  text4: string;
-}
+'use client';
+import React from 'react';
 
 const Footer: React.FC = () => {
-  const [footerData, setFooterData] = useState<FooterData | null>(null);
-
-  // Fetch footer data from the API when the component mounts
-  useEffect(() => {
-    const fetchFooterData = async () => {
-      try {
-        const res = await fetch('http://localhost:1338/api/footers'); // Adjust the URL as necessary
-        const result = await res.json();
-        const data = result.data[0]; // Assuming the first object in the array contains the footer data
-        setFooterData(data); // Set the fetched data to state
-      } catch (error) {
-        console.error('Error fetching footer data:', error);
-      }
-    };
-
-    fetchFooterData();
-  }, []);
-
-  // Display a loading message while fetching data
-  if (!footerData) {
-    return <div>Loading...</div>;
-  }
+  // Function to handle smooth scroll
+  const handleSmoothScroll = (event: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    event.preventDefault();
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   return (
-    <footer className="bg-gray-900 text-gray-400 py-8">
-      <div className="max-w-7xl mx-auto px-4 flex flex-col items-center space-y-4">
-        <div className="flex space-x-4 text-purple-500 text-2xl ">
-          <a href="https://www.facebook.com/eiimey.tah?mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer">
-            <FaFacebook className="w-6 h-6 cursor-pointer" />
-          </a>
-          <a href="https://www.instagram.com/hzhhddjdjeifjsjdjjj/" target="_blank" rel="noopener noreferrer">
-            <FaInstagram className="w-6 h-6 cursor-pointer" />
-          </a>
-          <a href="https://t.me/Naisreymey001" target="_blank" rel="noopener noreferrer">
-            <FaTelegram className="w-6 h-6 cursor-pointer" />
-          </a>
-          <a href="mailto:sreymey.nai@institute.pse.ngo" target="_blank" rel="noopener noreferrer">
-            <FaEnvelope className="w-6 h-6 cursor-pointer" />
-          </a>
+    <footer className="bg-gradient-to-b from-gray-900 to-black text-gray-400 py-8">
+      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-xs space-y-4 md:space-y-0">
+        {/* Left Section with Email */}
+        <div className="flex items-center space-x-6">
+          <p className="text-md font-semibold text-white">©2024 Nai Sreymey</p>
+          <span className="text-gray-500">Fullstack Developer</span>
         </div>
-        <div className="text-center text-sm space-y-2">
-          <p>©2024 {footerData.name}</p>
-          <div className="flex justify-center space-x-4">
-            <span>{footerData.text1}</span>
-            <span>|</span>
-            <span>{footerData.text2}</span>
-            <span>|</span>
-            <span>{footerData.text3}</span>
-          </div>
-          <p>Designed by <a href="#" className="text-purple-500 hover:underline">{footerData.text4}</a></p>
+
+        {/* Middle Section with Email */}
+        <div className="text-center md:text-left space-y-2">
+          <p className="text-xs text-gray-500">
+            Email: <a href="mailto:nai.sreymey@example.com" className="text-blue-500 hover:underline">nai.sreymey@institute.pse.ngo</a>
+          </p>
+        </div>
+
+        {/* Right Section with Credits */}
+        <div className="text-center md:text-right">
+          <p className="text-xs text-gray-500">
+            Designed & Developed by{' '}
+            <a
+              href="#home"
+              onClick={(e) => handleSmoothScroll(e, 'home')}
+              className="text-blue-500 hover:underline cursor-pointer"
+            >
+              NAI SREYMEY
+            </a>
+          </p>
         </div>
       </div>
     </footer>

@@ -1,67 +1,59 @@
-"use client";
-import React, { useEffect, useState } from 'react';
-
-interface AboutData {
-  title: string;
-  p1: string;
-  p2: string;
-  box1: string;
-  box2: string;
-  box3: string;
-  box4: string;
-  boxtext1: string;
-  boxtext2: string;
-  boxtext3: string;
-  boxtext4: string;
-}
+import React from "react";
 
 const About: React.FC = () => {
-  const [aboutData, setAboutData] = useState<AboutData | null>(null);
-
-  useEffect(() => {
-    const fetchAboutData = async () => {
-      try {
-        const res = await fetch('http://localhost:1338/api/portfolios');
-        const result = await res.json();
-        const data = result.data[0];  // Access the first item in the array
-        console.log('Fetched data:', data);
-        setAboutData(data);  // Set the first object of the array as aboutData
-      } catch (error) {
-        console.error('Error fetching about data:', error);
-      }
-    };
-
-    fetchAboutData();
-  }, []);
-
-  if (!aboutData) {
-    return <div>Loading...</div>;
-  }
-
   return (
-    <section id="about" className="bg-gray-900 text-white py-20">
-      <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-6 hover:text-purple-400 transition-all duration-300 ease-in-out">{aboutData.title}</h2>
-        <p className="text-lg text-gray-400 text-center mb-8 ">{aboutData.p1}</p>
-        <p className="text-lg text-gray-400 text-center mb-6">{aboutData.p2}</p>
+    <section id="about" className="relative text-white py-16 md:py-32">
+      <div className="absolute inset-0 bg-black opacity-50"></div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-          <div className="bg-purple-600 p-4 rounded-lg flex flex-col items-center hover:bg-black transition duration-300">
-            <h3 className="text-xl font-bold">{aboutData.box1}</h3>
-            <p className="text-gray-300 text-center">{aboutData.boxtext1}</p>
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <h2 className="text-6xl font-extrabold text-center mb-10 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400 animate-pulse">
+          About Me
+        </h2>
+       
+        <p className="text-lg text-gray-300 text-center mb-6">
+          I am Nai Sreymey, a Full-Stack Developer from Phnom Penh. I have completed a 1-month internship at Sala Tech, where I focused on frontend development. Although I'm not yet a full-stack developer, I am currently studying to expand my skills and aim to work full-stack in the future.
+        </p>
+        <p className="text-lg text-gray-300 text-center mb-12">
+          I specialize in building responsive, dynamic, and scalable applications using modern technologies, ensuring a seamless user experience and robust functionality.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="p-6 bg-gradient-to-r from-blue-600 to-blue-500 rounded-lg shadow-lg hover:scale-105 transform transition duration-300 ease-in-out hover:shadow-2xl">
+            <h3 className="text-2xl font-bold mb-4 text-white">Frontend Development</h3>
+            <p className="text-gray-300">
+              I build dynamic user interfaces using modern technologies like React, Next.js, and Tailwind CSS.
+            </p>
           </div>
-          <div className="bg-gray-600 p-4 rounded-lg flex flex-col items-center hover:bg-black transition duration-300">
-            <h3 className="text-xl font-bold">{aboutData.box2}</h3>
-            <p className="text-gray-300 text-center">{aboutData.boxtext2}</p>
+          <div className="p-6 bg-gradient-to-r from-blue-600 to-blue-500 rounded-lg shadow-lg hover:scale-105 transform transition duration-300 ease-in-out hover:shadow-2xl">
+            <h3 className="text-2xl font-bold mb-4 text-white">Backend Development</h3>
+            <p className="text-gray-300">
+              I work with Node.js, Express, and databases like MongoDB and MySQL to build robust server-side applications.
+            </p>
           </div>
-          <div className="bg-gray-600 p-4 rounded-lg flex flex-col items-center hover:bg-black transition duration-300">
-            <h3 className="text-xl font-bold">{aboutData.box3}</h3>
-            <p className="text-gray-300 text-center">{aboutData.boxtext3}</p>
+          <div className="p-6 bg-gradient-to-r from-blue-600 to-blue-500 rounded-lg shadow-lg hover:scale-105 transform transition duration-300 ease-in-out hover:shadow-2xl">
+            <h3 className="text-2xl font-bold mb-4 text-white">Database Management</h3>
+            <p className="text-gray-300">
+              I am skilled in managing and optimizing databases like MySQL, PostgreSQL, and MongoDB.
+            </p>
           </div>
-          <div className="bg-gray-600 p-4 rounded-lg flex flex-col items-center hover:bg-black transition duration-300">
-            <h3 className="text-xl font-bold">{aboutData.box4}</h3>
-            <p className="text-gray-300 text-center">{aboutData.boxtext4}</p>
+          <div className="p-6 bg-gradient-to-r from-blue-600 to-blue-500 rounded-lg shadow-lg hover:scale-105 transform transition duration-300 ease-in-out hover:shadow-2xl">
+            <h3 className="text-2xl font-bold mb-4 text-white">Deployment</h3>
+            <p className="text-gray-300">
+              I deploy applications using platforms like Vercel, Docker, and AWS for scalable, production-ready solutions.
+            </p>
           </div>
+        </div>
+
+        <div className="mt-12 text-center">
+          <h3 className="text-4xl font-semibold text-white mb-6 transform hover:translate-y-1 transition duration-300">
+            Passionate About Building Scalable Solutions
+          </h3>
+          <p className="text-lg text-gray-300 mb-4">
+            My goal is to create applications that are not only scalable and easy to maintain but also provide a seamless experience for users.
+          </p>
+          <p className="text-lg text-gray-300">
+            I believe in continuous learning and aim to stay up-to-date with the latest technologies and best practices to deliver the best results.
+          </p>
         </div>
       </div>
     </section>

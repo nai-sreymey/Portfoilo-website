@@ -25,3 +25,116 @@ body {
     text-wrap: balance;
   }
 }
+
+.animated-text {
+  position: relative;
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid white; /* Cursor effect */
+  width: 0;
+  animation: typing 8s steps(40, end) infinite, blink 0.4s step-end infinite;
+}
+
+.animated-text1 {
+  position: relative;
+  font-size: 6rem;
+  font-weight: bold;
+  color: white;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid white; /* Cursor effect */
+  width: 0;
+  animation: typing 4s steps(40, end) infinite, blink 0.4s step-end infinite;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+html, body {
+  background-color: #0d47a1 !important;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Use min-height instead of height */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure content takes full height */
+#__next {
+  flex: 1; /* Allow content to expand */
+}
+
+/* Ensure footer stays at the bottom */
+footer {
+  position: relative;
+  z-index: 10; /* Ensure footer is above particles */
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto; /* Push footer down */
+}
+
+.glow-effect {
+  position: relative;
+  z-index: 1;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.glow-effect::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  z-index: -1;
+  filter: blur(30px);
+  animation: glow 2.5s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.4), 0 0 50px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.6), 0 0 100px rgba(255, 255, 255, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.4), 0 0 50px rgba(255, 255, 255, 0.5);
+  }
+}
+
+.glow-effect img {
+  position: relative;
+  z-index: 2;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.glow-effect:hover {
+  transform: scale(1.05);
+}
+
+.glow-effect:hover img {
+  transform: scale(1.05);
+}
