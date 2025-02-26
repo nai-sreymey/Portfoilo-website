@@ -143,19 +143,39 @@ const Hero: React.FC = () => {
             </div>
 
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: [1, 1.1, 1] }}
-              transition={{ duration: 3, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" }}
-              className="rounded-full w-[400px] h-[400px] p-2 border-4 shadow-2xl bg-gradient-to-r from-blue-300 via-blue-500 to-blue-700"
-            >
-              <Image
-                src="/meymey1410.jpg"
-                alt="Nai SreyMey"
-                width={400}
-                height={400}
-                className="rounded-full object-cover transition duration-300 ease-in-out"
-              />
-            </motion.div>
+  initial={{ opacity: 9, scale: 0.9, boxShadow: "0px 0px 0px rgba(255, 255, 255, 0)" }}
+  animate={{
+    opacity: 1,
+    scale: [1, 1.04, 1],
+    boxShadow: [
+      "0px 0px 20px rgba(255, 255, 255, 0.3)", // subtle glow at first
+      "0px 0px 30px rgba(255, 255, 255, 0.5)", // stronger glow
+      "0px 0px 20px rgba(255, 255, 255, 0.3)", // back to subtle
+    ],
+    background: [
+      "rgba(255, 255, 255, 0)", // transparent background at first
+      "rgba(0, 0, 0, 0.1)",     // slight dark background to pop the image
+      "rgba(255, 255, 255, 0)", // back to transparent
+    ],
+  }}
+  transition={{
+    duration: 3,
+    repeat: Infinity,
+    repeatType: "mirror",
+    ease: "easeInOut",
+  }}
+  className="relative rounded-lg"
+>
+  <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-20 rounded-lg" />
+  <Image
+    src="/meymey1410.jpg"
+    alt="Nai SreyMey"
+    width={400}
+    height={400}
+    className="object-cover transition duration-300 ease-in-out"
+  />
+</motion.div>
+
           </div>
         </section>
       </main>

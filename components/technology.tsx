@@ -23,7 +23,7 @@ const Technology: React.FC = () => {
   ];
 
   return (
-    <section id="tool" className="relative min-h-[70vh] flex items-center justify-center text-white">
+    <section id="technologies" className="relative min-h-[70vh] flex items-center justify-center text-white">
       <div className="absolute inset-0 bg-black opacity-50" />
       <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
         <motion.h2
