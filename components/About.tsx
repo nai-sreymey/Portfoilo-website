@@ -11,7 +11,7 @@ const About: React.FC = () => {
         </h2>
        
         <p className="text-lg text-gray-300 text-center mb-6">
-          I am Nai Sreymey, a Full-Stack Developer from Phnom Penh. I have completed a 1-month internship at Sala Tech, where I focused on frontend development. Although I'm not yet a full-stack developer, I am currently studying to expand my skills and aim to work full-stack in the future.
+          I am Nai Sreymey, a Full-Stack Developer from Phnom Penh. I have completed a 1-month internship at Sala Tech, where I focused on frontend development. Although I am not yet a full-stack developer, I am currently studying to expand my skills and aim to work full-stack in the future.
         </p>
         <p className="text-lg text-gray-300 text-center mb-12">
           I specialize in building responsive, dynamic, and scalable applications using modern technologies, ensuring a seamless user experience and robust functionality.

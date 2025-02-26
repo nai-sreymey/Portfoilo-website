@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
-import type { Container, Engine } from "@tsparticles/engine";
+import type { Container } from "@tsparticles/engine";
 import { loadFull } from "tsparticles";
 
 const Background = () => {
@@ -21,10 +21,6 @@ const Background = () => {
         };
     }, []);
 
-    const particlesLoaded = (container: Container) => {
-        console.log("Particles Loaded", container);
-    };
-
     return (
         <>
             {init && (
@@ -41,7 +37,6 @@ const Background = () => {
                                     enable: true,
                                     mode: "slow",
                                 },
-                                
                             },
                             modes: {
                                 slow: {
@@ -87,11 +82,6 @@ const Background = () => {
                                     speed: 2,
                                     sync: false,
                                 },
-                            },
-                            glow: {
-                                enable: true,
-                                color: "#ffffff",
-                                intensity: 0.5,
                             },
                         },
                         detectRetina: true,

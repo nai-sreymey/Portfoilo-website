@@ -1,7 +1,6 @@
-"use client";
-
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image"; // Import the Image component
 
 const Technology: React.FC = () => {
   const technologies = [
@@ -48,10 +47,12 @@ const Technology: React.FC = () => {
               transition={{ duration: 0.6, delay: index * 0.2 }}
             >
               <div className="mb-4">
-                <img
+                <Image
                   src={tech.image}
                   alt={tech.title}
-                  className="w-16 h-16 mx-auto mb-4 transition-all duration-300 transform hover:scale-125"
+                  width={64} // Specify width
+                  height={64} // Specify height
+                  className="mx-auto mb-4 transition-all duration-300 transform hover:scale-125"
                 />
               </div>
               <h3 className="text-2xl font-bold text-gray-900">{tech.title}</h3>

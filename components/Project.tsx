@@ -1,5 +1,6 @@
 'use client';
 import React, { useRef, useState } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const projectImages = [
@@ -59,22 +60,9 @@ const Projects: React.FC = () => {
     }
   };
 
-  // Handle image click for modal (big image view)
-  const handleImageClick = (image: string, event: React.MouseEvent) => {
-    if (
-      image === '/buildonlinesurveyanddashboarddisplay.png' ||
-      image === '/certificate-generation.png'
-    ) {
-      event.preventDefault(); // Prevent navigation
-      setSelectedImage(image);
-    }
-  };
-
   return (
     <section id="projects" className="relative min-h-screen flex items-center justify-center text-white">
-      {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-
       <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
         <motion.h2
           className="text-6xl font-bold mb-8 tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 animate-pulse"
@@ -87,18 +75,8 @@ const Projects: React.FC = () => {
         <p className="text-lg mb-12">
           Explore my real-world projects. Each one showcases skills, technologies, and experience in web development.
         </p>
-
         <div className="relative flex items-center w-full max-w-[90vw] mx-auto">
-          {/* Scrollable Container */}
-          <div
-            ref={containerRef}
-            className="flex space-x-8 py-6 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory w-full"
-            style={{
-              scrollBehavior: 'smooth',
-              scrollbarWidth: 'none', // Firefox
-              msOverflowStyle: 'none', // Internet Explorer 11
-            }}
-          >
+          <div ref={containerRef} className="flex space-x-8 py-6 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory w-full">
             {projectImages.map((image, index) => (
               <motion.div
                 key={index}
@@ -107,18 +85,15 @@ const Projects: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 whileHover={{ scale: 1.05 }}
-                onClick={(e) => handleImageClick(image, e)} // Pass the event to handleImageClick
               >
-                <a
-                  href={projectLinks[index] || '#'}
-                  target={projectLinks[index] ? "_blank" : undefined}
-                  rel="noopener noreferrer"
-                >
+                <a href={projectLinks[index] || '#'} target={projectLinks[index] ? "_blank" : undefined} rel="noopener noreferrer">
                   <div className="flex justify-center mb-6">
-                    <img
+                    <Image
                       src={image}
                       alt={projectDetails[index]}
-                      className="rounded-lg w-full h-[250px] object-cover"
+                      width={420}
+                      height={250}
+                      className="rounded-lg object-cover"
                     />
                   </div>
                   <h3 className="text-2xl font-semibold text-blue-400 mb-3">{projectDetails[index]}</h3>
@@ -127,28 +102,18 @@ const Projects: React.FC = () => {
               </motion.div>
             ))}
           </div>
-
-          {/* Navigation Arrows */}
           <div className="absolute left-0 top-1/2 transform -translate-y-1/2 m-2">
-            <button
-              onClick={() => scroll('prev')}
-              className="bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition"
-            >
+            <button onClick={() => scroll('prev')} className="bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition">
               &#10094;
             </button>
           </div>
           <div className="absolute right-0 top-1/2 transform -translate-y-1/2 m-2">
-            <button
-              onClick={() => scroll('next')}
-              className="bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition"
-            >
+            <button onClick={() => scroll('next')} className="bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition">
               &#10095;
             </button>
           </div>
         </div>
       </div>
-
-      {/* Modal for Enlarged Image */}
       <AnimatePresence>
         {selectedImage && (
           <motion.div
@@ -156,7 +121,7 @@ const Projects: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setSelectedImage(null)} // Close when clicking outside
+            onClick={() => setSelectedImage(null)}
           >
             <motion.img
               src={selectedImage}
