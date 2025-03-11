@@ -143,38 +143,34 @@ const Hero: React.FC = () => {
             </div>
 
             <motion.div
-  initial={{ opacity: 9, scale: 0.9, boxShadow: "0px 0px 0px rgba(255, 255, 255, 0)" }}
+  initial={{ opacity: 0, scale: 0.9 }}
   animate={{
     opacity: 1,
     scale: [1, 1.04, 1],
     boxShadow: [
-      "0px 0px 20px rgba(255, 255, 255, 0.3)", // subtle glow at first
-      "0px 0px 30px rgba(255, 255, 255, 0.5)", // stronger glow
-      "0px 0px 20px rgba(255, 255, 255, 0.3)", // back to subtle
-    ],
-    background: [
-      "rgba(255, 255, 255, 0)", // transparent background at first
-      "rgba(0, 0, 0, 0.1)",     // slight dark background to pop the image
-      "rgba(255, 255, 255, 0)", // back to transparent
+      "0px 0px 30px rgba(173, 216, 230, 0.7)", // Light blue glow
+      "0px 0px 40px rgba(255, 105, 180, 0.7)", // Pink glow
+      "0px 0px 30px rgba(173, 216, 230, 0.7)", // Back to light blue
     ],
   }}
   transition={{
-    duration: 3,
+    duration: 2.5,
     repeat: Infinity,
     repeatType: "mirror",
     ease: "easeInOut",
   }}
-  className="relative rounded-lg"
+  className="relative rounded-lg overflow-hidden border-4 border-white shadow-2xl"
 >
-  <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-20 rounded-lg" />
+  <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-30 rounded-lg blur-md" />
   <Image
     src="/meymey1410.jpg"
     alt="Nai SreyMey"
-    width={400}
-    height={400}
-    className="object-cover transition duration-300 ease-in-out"
+    width={300}
+    height={300}
+    className="object-cover rounded-lg transition duration-500 ease-in-out hover:scale-110"
   />
 </motion.div>
+
 
           </div>
         </section>
